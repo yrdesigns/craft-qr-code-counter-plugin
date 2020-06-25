@@ -1,0 +1,44 @@
+{
+    "name": "yrdesignscraftqrcodecounter/qr-code-ref-counter",
+    "description": "Connect your QR code to your Homepage with your Craft User to count how many calls  are made.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "qr code ref counter"
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "YR Designs",
+            "homepage": "https://yr-designs.ch"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "yrdesignscraftqrcodecounter\\qrcoderefcounter\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "QR Code ref counter",
+        "handle": "qr-code-ref-counter",
+        "developer": "YR Designs",
+        "developerUrl": "https://yr-designs.ch",
+        "documentationUrl": "???",
+        "changelogUrl": "???",
+        "components": {
+            "qrCodeRefCounterService": "yrdesignscraftqrcodecounter\\qrcoderefcounter\\services\\QrCodeRefCounterService"
+        },
+        "class": "yrdesignscraftqrcodecounter\\qrcoderefcounter\\QrCodeRefCounter"
+    }
+}

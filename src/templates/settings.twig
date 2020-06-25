@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * QR Code ref counter plugin for Craft CMS 3.x
+ *
+ * QR Code ref counter Settings.twig
+ *
+ * @author    YR Designs
+ * @copyright Copyright (c) 2020 YR Designs
+ * @link      https://yr-designs.ch
+ * @package   QrCodeRefCounter
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("yrdesignscraftqrcodecounter\\qrcoderefcounter\\assetbundles\\qrcoderefcounter\\QrCodeRefCounterAsset") %}
+
+{{ forms.textField({
+    label: 'Some Field',
+    instructions: 'Enter some setting here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: settings['someAttribute']})
+}}

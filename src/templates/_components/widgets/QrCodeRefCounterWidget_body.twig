@@ -1,0 +1,20 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * QR Code ref counter plugin for Craft CMS
+ *
+ * QrCodeRefCounterWidget Widget Body
+ *
+ * @author    YR Designs
+ * @copyright Copyright (c) 2020 YR Designs
+ * @link      https://yr-designs.ch
+ * @package   QrCodeRefCounter
+ * @since     1.0.0
+ */
+#}
+
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@yrdesignscraftqrcodecounter/qrcoderefcounter/assetbundles/qrcoderefcounterwidgetwidget/dist', true) ~ '/img/QrCodeRefCounterWidget-icon.svg' %}
+
+<img src="{{ iconUrl }}" height="64" width="64" />
+
+<p>{{ message }}</p>
