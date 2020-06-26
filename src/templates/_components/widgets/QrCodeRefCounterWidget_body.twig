@@ -13,8 +13,18 @@
  */
 #}
 
-{% set iconUrl = view.getAssetManager().getPublishedUrl('@yrdesignscraftqrcodecounter/qrcoderefcounter/assetbundles/qrcoderefcounterwidgetwidget/dist', true) ~ '/img/QrCodeRefCounterWidget-icon.svg' %}
+<table>
+    <tr>
+        {% for key, setting in settings %}
+            <th>
+                <strong>{{ key }}</strong>
+            </th>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for key, setting in settings %}
+            <td>{{ setting }}</td>
+        {% endfor %}
+    </tr>
+</table>
 
-<img src="{{ iconUrl }}" height="64" width="64" />
-
-<p>{{ message }}</p>

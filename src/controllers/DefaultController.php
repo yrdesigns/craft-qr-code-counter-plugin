@@ -10,6 +10,7 @@
 
 namespace yrdesignscraftqrcodecounter\qrcoderefcounter\controllers;
 
+use craft\helpers\UrlHelper;
 use yrdesignscraftqrcodecounter\qrcoderefcounter\QrCodeRefCounter;
 
 use Craft;
@@ -46,7 +47,7 @@ class DefaultController extends Controller
      *         The actions must be in 'kebab-case'
      * @access protected
      */
-    protected $allowAnonymous = ['index', 'do-something'];
+    protected $allowAnonymous = ['index'];
 
     // Public Methods
     // =========================================================================
@@ -54,26 +55,38 @@ class DefaultController extends Controller
     /**
      * Handle a request going to our plugin's index action URL,
      * e.g.: actions/qr-code-ref-counter/default
-     *
-     * @return mixed
      */
-    public function actionIndex()
-    {
-        $result = 'Welcome to the DefaultController actionIndex() method';
+    public function actionIndex() {
+        $params = Craft::$app->request->getQueryParams();
+        $context = '';
+        $unspecific = true;
 
-        return $result;
-    }
+        if (isset($params['pl'])) {
+            $context = 'Peter';
+            $unspecific = false;
+        }
 
-    /**
-     * Handle a request going to our plugin's actionDoSomething URL,
-     * e.g.: actions/qr-code-ref-counter/default/do-something
-     *
-     * @return mixed
-     */
-    public function actionDoSomething()
-    {
-        $result = 'Welcome to the DefaultController actionDoSomething() method';
+        if (isset($params['fl'])) {
+            $context = 'Fabian';
+            $unspecific = false;
+        }
 
-        return $result;
+        if (isset($params['dl'])) {
+            $context = 'Diego';
+            $unspecific = false;
+        }
+
+        if ($unspecific) {
+            $context = 'Unspezifisch';
+        }
+
+        QrCodeRefCounter::getInstance()->qrCodeRefCounterService->save($context);
+
+        $plugin = QrCodeRefCounter::getInstance();
+        $redirect = 'https://luescher-immo.ch';
+        if ($plugin !== null) {
+            $redirect = $plugin->settings->redirect;
+        }
+        $this->redirect($redirect);
     }
 }

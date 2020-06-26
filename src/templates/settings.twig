@@ -18,9 +18,45 @@
 {% do view.registerAssetBundle("yrdesignscraftqrcodecounter\\qrcoderefcounter\\assetbundles\\qrcoderefcounter\\QrCodeRefCounterAsset") %}
 
 {{ forms.textField({
-    label: 'Some Field',
-    instructions: 'Enter some setting here.',
-    id: 'someAttribute',
-    name: 'someAttribute',
-    value: settings['someAttribute']})
+    label: 'Alle',
+    instructions: 'Die Summe der Spezifischen und unspezifischen Aufrufe',
+    id: 'Alle',
+    name: 'Alle',
+    value: settings['Alle']})
+}}
+
+{{ forms.textField({
+    label: 'Unspezifisch',
+    instructions: 'Alle unspezifischen Aufrufe',
+    id: 'Unspezifisch',
+    name: 'Unspezifisch',
+    value: settings['Unspezifisch']})
+}}
+
+{{ forms.textField({
+    label: 'Peter',
+    id: 'Peter',
+    name: 'Peter',
+    value: settings['Peter']})
+}}
+
+{{ forms.textField({
+    label: 'Fabian',
+    id: 'Fabian',
+    name: 'Fabian',
+    value: settings['Fabian']})
+}}
+
+{{ forms.textField({
+    label: 'Diego',
+    id: 'Diego',
+    name: 'Diego',
+    value: settings['Diego']})
+}}
+
+{{ forms.textField({
+    label: 'Weiterleitung',
+    id: 'Weiterleitung',
+    name: 'redirect',
+    value: settings['redirect']})
 }}

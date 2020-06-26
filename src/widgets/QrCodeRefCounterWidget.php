@@ -49,17 +49,7 @@ class QrCodeRefCounterWidget extends Widget
      */
     public static function displayName(): string
     {
-        return Craft::t('qr-code-ref-counter', 'QrCodeRefCounterWidget');
-    }
-
-    /**
-     * Returns the path to the widget’s SVG icon.
-     *
-     * @return string|null The path to the widget’s SVG icon
-     */
-    public static function iconPath()
-    {
-        return Craft::getAlias("@yrdesignscraftqrcodecounter/qrcoderefcounter/assetbundles/qrcoderefcounterwidgetwidget/dist/img/QrCodeRefCounterWidget-icon.svg");
+        return Craft::t('qr-code-ref-counter', 'QR Code Statistik');
     }
 
     /**
@@ -189,7 +179,7 @@ class QrCodeRefCounterWidget extends Widget
      * [[\craft\web\View::registerJs()]].
      *
      * @return string|null
-     */
+
     public function getSettingsHtml()
     {
         return Craft::$app->getView()->renderTemplate(
@@ -198,7 +188,7 @@ class QrCodeRefCounterWidget extends Widget
                 'widget' => $this
             ]
         );
-    }
+    }    */
 
     /**
      * Returns the widget's body HTML.
@@ -214,7 +204,7 @@ class QrCodeRefCounterWidget extends Widget
         return Craft::$app->getView()->renderTemplate(
             'qr-code-ref-counter/_components/widgets/QrCodeRefCounterWidget_body',
             [
-                'message' => $this->message
+                'settings' => \yrdesignscraftqrcodecounter\qrcoderefcounter\QrCodeRefCounter::getInstance()->settings,
             ]
         );
     }

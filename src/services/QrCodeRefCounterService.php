@@ -10,6 +10,7 @@
 
 namespace yrdesignscraftqrcodecounter\qrcoderefcounter\services;
 
+use yii\web\NotFoundHttpException;
 use yrdesignscraftqrcodecounter\qrcoderefcounter\QrCodeRefCounter;
 
 use Craft;
@@ -41,15 +42,25 @@ class QrCodeRefCounterService extends Component
      *
      *     QrCodeRefCounter::$plugin->qrCodeRefCounterService->exampleService()
      *
-     * @return mixed
+     * @return mixed | void
      */
-    public function exampleService()
+    public function save($context)
     {
-        $result = 'something';
-        // Check our Plugin's settings for `someAttribute`
-        if (QrCodeRefCounter::$plugin->getSettings()->someAttribute) {
+        $plugin = QrCodeRefCounter::getInstance();
+        if ($plugin === null) {
+            return;
         }
 
-        return $result;
+        $settings = [
+            'Diego' => $plugin->settings->Diego,
+            'Fabian' => $plugin->settings->Fabian,
+            'Peter' => $plugin->settings->Peter,
+            'Unspezifisch' => $plugin->settings->Unspezifisch,
+            'Alle' => $plugin->settings->Alle,
+        ];
+
+        $saveSettings = ['Alle' => $settings['Alle'] + 1, $context => $settings[$context] + 1];
+
+        Craft::$app->getPlugins()->savePluginSettings($plugin, $saveSettings);
     }
 }

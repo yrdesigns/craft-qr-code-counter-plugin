@@ -10,10 +10,10 @@
 
 namespace yrdesignscraftqrcodecounter\qrcoderefcounter\models;
 
-use yrdesignscraftqrcodecounter\qrcoderefcounter\QrCodeRefCounter;
 
 use Craft;
 use craft\base\Model;
+use craft\helpers\UrlHelper;
 
 /**
  * QrCodeRefCounter Settings Model
@@ -37,9 +37,44 @@ class Settings extends Model
     /**
      * Some field model attribute
      *
-     * @var string
+     * @var int
      */
-    public $someAttribute = 'Some Default';
+    public $Alle = 0;
+
+    /**
+     * Some field model attribute
+     *
+     * @var int
+     */
+    public $Unspezifisch = 0;
+
+    /**
+     * Some field model attribute
+     *
+     * @var int
+     */
+    public $Diego = 0;
+
+    /**
+     * Some field model attribute
+     *
+     * @var int
+     */
+    public $Fabian = 0;
+
+    /**
+     * Some field model attribute
+     *
+     * @var int
+     */
+    public $Peter = 0;
+
+    /**
+     * Some field model attribute
+     *
+     * @var int
+     */
+    public $redirect = 'https://luescher-immo.ch';
 
     // Public Methods
     // =========================================================================
@@ -57,8 +92,10 @@ class Settings extends Model
     public function rules()
     {
         return [
-            ['someAttribute', 'string'],
-            ['someAttribute', 'default', 'value' => 'Some Default'],
+            [['Alle', 'Unspezifisch', 'Peter', 'Fabian', 'Diego'], 'number'],
+            [['Alle', 'Unspezifisch', 'Peter', 'Fabian', 'Diego'], 'required'],
+            [['Alle', 'Unspezifisch', 'Peter', 'Fabian', 'Diego'], 'default', 'value' => 0],
+            [['redirect'], 'default', 'value' => 'https://luescher-immo.ch'],
         ];
     }
 }
