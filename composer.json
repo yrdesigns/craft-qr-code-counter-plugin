@@ -11,8 +11,8 @@
         "qr code ref counter"
     ],
     "support": {
-        "docs": "???",
-        "issues": "???"
+        "docs": "https://github.com/yrdesigns/craft-qr-code-counter-plugin",
+        "issues": "https://github.com/yrdesigns/craft-qr-code-counter-plugin"
     },
     "license": "MIT",
     "authors": [
