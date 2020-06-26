@@ -33,9 +33,9 @@
         "name": "QR Code ref counter",
         "handle": "qr-code-ref-counter",
         "developer": "YR Designs",
-        "developerUrl": "https://yr-designs.ch",
-        "documentationUrl": "???",
-        "changelogUrl": "???",
+        "developerUrl": "https://github.com/yrdesigns/craft-qr-code-counter-plugin",
+        "documentationUrl": "https://github.com/yrdesigns/craft-qr-code-counter-plugin",
+        "changelogUrl": "https://github.com/yrdesigns/craft-qr-code-counter-plugin",
         "components": {
             "qrCodeRefCounterService": "yrdesignscraftqrcodecounter\\qrcoderefcounter\\services\\QrCodeRefCounterService"
         },
